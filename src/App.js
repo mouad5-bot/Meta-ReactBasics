@@ -1,13 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/Footer';
+import Nav from './components/Nav';
 
-function Header(){
-  return <h1>this is a header.</h1>
-}
 function App() {
-  let title = "main application";
 
-  return <Header />;
+  return <Nav />;
   // (
   //   <div className="App">
   //     <header className="App-header">
