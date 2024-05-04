@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Promo from './components/Promo';
 import logo from './assets/logo.jpg';
 import InputComponent from './state/InputComponent';
+import RegisterForm from './state/RegisterForm';
 
 function Logo (props){
   const logoPic = <img src={logo} />;
@@ -24,6 +25,8 @@ function App() {
         </button>
         <hr />
         <InputComponent />
+        <hr />
+        <RegisterForm />
     </div>
   ); 
 };
