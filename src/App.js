@@ -5,6 +5,9 @@ import Promo from './components/Promo';
 import logo from './assets/logo.jpg';
 import InputComponent from './state/InputComponent';
 import RegisterForm from './state/RegisterForm';
+import UseStateExample from './state/UseStateExample';
+import { Routes, Route, Link } from "react-router-dom";
+import React, {useState} from 'react';
 
 function Logo (props){
   const logoPic = <img src={logo} />;
@@ -13,45 +16,37 @@ function Logo (props){
 
 function App() {
   const date = new Date();
+  const [name, setName] = React.useState('Mfifel');
+ 
+  function handleClick() {
+     setName('Mouad_Fifel');
+  }
+
   return (
     <div className="App"> 
-        <Nav />
-        <Promo msg={date.toLocaleTimeString()} />
-        {/* <Logo /> */}
-        <Footer />
+      <nav>
+        <Link to="/" className="nav-item">Promo</Link>
+        <Link to="/InputComponent" className="nav-item">InputComponent</Link>
+        <Link to="/RegisterForm" className="nav-item">RegisterForm</Link>
+        <Link to="/UseStateExample" className="nav-item">UseStateExample</Link>
+        <Link to="/contact" className="nav-item">UseStateExample</Link>
+	    </nav>
 
-        <button onClick={function() {console.log('first example')}}>
-          An inline anonymous ES5 function event handler
-        </button>
-        <hr />
-        <InputComponent />
-        <hr />
-        <RegisterForm />
+        {/* <Logo /> */}
+         {/* <Footer />  */}
+          <button onClick={function() {console.log('first example')}}>
+            An inline anonymous ES5 function event handler
+          </button>
+        <hr /> 
+
+        <Routes> 
+          <Route path="/" element={<Promo msg={date.toLocaleTimeString()} />}></Route>
+          <Route path="/InputComponent" element={<InputComponent />}></Route>
+          <Route path="/RegisterForm" element={<RegisterForm />}></Route>
+          <Route path="/UseStateExample" element={<UseStateExample msg = {name} />}></Route>
+        </Routes>
     </div>
   ); 
 };
 
 export default App;
-
-
-
-
-
-// function App() {
-//   function handleClick() {
-//     let randomNum = Math.floor(Math.random() * 3) + 1
-//     console.log(randomNum)
-//     let userInput = prompt('type a number');
-//     alert(`Computer number: ${randomNum}, Your guess: ${userInput}`)
-//   }
-  
-//   return (
-//     <div>
-//       <h1>Task: Add a button and handle a click event</h1>
-//       <button onClick={handleClick} >Guess the number between 1 and 3</button>
-//     </div>
-//   );
-// }
-
-// export default App;
-
