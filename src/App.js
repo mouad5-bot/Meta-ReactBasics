@@ -6,6 +6,7 @@ import logo from './assets/logo.jpg';
 import InputComponent from './state/InputComponent';
 import RegisterForm from './state/RegisterForm';
 import UseStateExample from './state/UseStateExample';
+import Youtube from './components/Youtube';
 import { Routes, Route, Link } from "react-router-dom";
 import React, {useState} from 'react';
 
@@ -29,21 +30,21 @@ function App() {
         <Link to="/InputComponent" className="nav-item">InputComponent</Link>
         <Link to="/RegisterForm" className="nav-item">RegisterForm</Link>
         <Link to="/UseStateExample" className="nav-item">UseStateExample</Link>
-        <Link to="/contact" className="nav-item">UseStateExample</Link>
+        <Link to="/Youtube" className="nav-item">Videos</Link>
 	    </nav>
 
         {/* <Logo /> */}
          {/* <Footer />  */}
-          <button onClick={function() {console.log('first example')}}>
+          {/* <button onClick={function() {console.log('first example')}}>
             An inline anonymous ES5 function event handler
-          </button>
-        <hr /> 
+          </button> */} 
 
         <Routes> 
           <Route path="/" element={<Promo msg={date.toLocaleTimeString()} />}></Route>
           <Route path="/InputComponent" element={<InputComponent />}></Route>
           <Route path="/RegisterForm" element={<RegisterForm />}></Route>
           <Route path="/UseStateExample" element={<UseStateExample msg = {name} />}></Route>
+          <Route path="/Youtube" element={<Youtube  />}></Route>
         </Routes>
     </div>
   ); 
