@@ -7,6 +7,7 @@ import InputComponent from './state/InputComponent';
 import RegisterForm from './state/RegisterForm';
 import UseStateExample from './state/UseStateExample';
 import Youtube from './components/Youtube';
+import Calculator from './components/Calculator';
 import { Routes, Route, Link } from "react-router-dom";
 import React, {useState} from 'react';
 
@@ -31,6 +32,7 @@ function App() {
         <Link to="/RegisterForm" className="nav-item">RegisterForm</Link>
         <Link to="/UseStateExample" className="nav-item">UseStateExample</Link>
         <Link to="/Youtube" className="nav-item">Videos</Link>
+        <Link to="/Calculator" className="nav-item">Calculator</Link>
 	    </nav>
 
         {/* <Logo /> */}
@@ -45,6 +47,7 @@ function App() {
           <Route path="/RegisterForm" element={<RegisterForm />}></Route>
           <Route path="/UseStateExample" element={<UseStateExample msg = {name} />}></Route>
           <Route path="/Youtube" element={<Youtube  />}></Route>
+          <Route path="/Calculator" element={<Calculator  />}></Route>
         </Routes>
     </div>
   ); 
